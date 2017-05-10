@@ -1,0 +1,6 @@
+<h1>Gallery</h1>
+<h2><%= link_to "Add photo", new_photo_path %></h2>
+<div id="photo_index">
+  <%= render 'index', photos: @photos %>
+<div>
+<%#= paginate @photos %>

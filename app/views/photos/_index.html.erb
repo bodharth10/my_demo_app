@@ -1,0 +1,12 @@
+
+<% photos.in_groups_of(3) do |group| %>
+  <div class="row">
+    <% group.compact.each do |photo| %>
+      <div class="col-xs-4">
+        <%= image_tag photo.file_url, :width => '100%' if photo.file.present?%>
+          <h4><%= link_to photo.title, photo %></h4>
+            <%= link_to "Edit", edit_photo_path(photo) , remote: true, class: "btn btn-default" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,3 +1,14 @@
 <h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+<h2> Loged in <%= current_user.email %> </h2>
+<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Contact Us",contacts_path %></li>
+            <li><%= link_to "About Us", home_about_us_path %></li>
+            <li><%= link_to "Gallery", photos_path %></li>
+            <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li> 
+          </ul>
+        </nav>
+      </div>
+    </header>

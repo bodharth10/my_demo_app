@@ -52,6 +52,11 @@ group :development do
   gem 'devise', git: 'https://github.com/gogovan/devise.git', branch: 'rails-5.1'
   gem 'erubis'
   gem 'activeadmin', github: 'gregbell/active_admin'
+  #gem "paperclip", "~> 5.0.0.beta1"
+  gem 'carrierwave'
+  gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
+  gem 'mail_form'
+  gem 'simple_form'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
