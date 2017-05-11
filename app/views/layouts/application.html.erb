@@ -7,6 +7,24 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+           <% if user_signed_in? %>
+            <li><%= link_to "Contact Us",contacts_path %></li>
+            <li><%= link_to "About Us", home_about_us_path %></li>
+            <li><%= link_to "Gallery", photos_path %></li>
+             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'navbar-link red_bttn'  %></li>
+               <% else %>
+                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link blue_bttn'  %> |
+                <%= link_to "Login", new_user_session_path, :class => 'navbar-link home_bttn'  %>
+           <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>
   </head>
 
   <body>
@@ -14,10 +32,17 @@
 		    <div class="container">
 		      <%= yield %>
 		    </div>
-		    <footer>
-			  <div class="container">
-			  </div>
-		   </footer>
-     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		    
+
+         <footer class="footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-8" style="padding-top:20px;">
+                  <small>Online gallery</small>
+                </div>
+              </div>
+            </div>
+          </footer>
+
   </body>
 </html>

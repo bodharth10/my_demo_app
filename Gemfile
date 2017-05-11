@@ -57,6 +57,8 @@ group :development do
   gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
   gem 'mail_form'
   gem 'simple_form'
+  gem 'toastr-rails'
+  #gem 'mysql2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

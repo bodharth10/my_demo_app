@@ -2,5 +2,11 @@
 <h2><%= link_to "Add photo", new_photo_path %></h2>
 <div id="photo_index">
   <%= render 'index', photos: @photos %>
-<div>
-<%#= paginate @photos %>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+  </div> 
+</div>
+<%= paginate @photos %>

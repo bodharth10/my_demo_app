@@ -1,15 +1,33 @@
 
   <h3>Contact Us</h3>
 
-  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-    <%= f.input :name, :required => true %>
-    <%= f.input :email, :required => true %>
-    <%= f.input :mobile_number, :required => true %>
-    <%= f.input :message, :as => :text, :required => true %> 
-    <div>
-    </br>
-      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' },  wrapper: :horizontal_form  do |f| %>
+
+     <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true %>
+     </div>
+
+     <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+     </div>
+
+    <div class="field">
+      <%= f.label :mobile_number %><br />
+      <%= f.text_field :mobile_number, autofocus: true %>
     </div>
+
+
+     <div class="field">
+      <%= f.label :message %><br />
+      <%= f.text_area :message, autofocus: true %>
+     </div>
+
+
+      <div>
+        <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+      </div>
   <% end %>
 
    <iframe
@@ -19,3 +37,5 @@
     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDiuV0vMji0nfunvxCx30Dwtweqmkgqpak
       &q=Space+Needle," allowfullscreen>
   </iframe>
+
+

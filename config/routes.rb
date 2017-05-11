@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+   default_url_options :host => "maropost.dev"
    devise_for :admin_users, ActiveAdmin::Devise.config
    ActiveAdmin.routes(self)
    devise_for :users 

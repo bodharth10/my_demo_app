@@ -1,8 +1,10 @@
 class PhotosController < ApplicationController
   before_action :set_photos, only: [:show, :edit, :update, :destroy]
 
+  before_action :authenticate_user!
+
   def index
-    @photos = Photo.all
+    @photos = Photo.page(params[:page])
   end
 
   # GET /people/1
@@ -30,10 +32,6 @@ class PhotosController < ApplicationController
     respond_to do |format|
       if @photo.save
         format.html { redirect_to photos_path, notice: 'Photo was successfully created.' }
-        #format.js { render :show, status: :created, location: @photo }
-      else
-        format.html { render :new }
-        format.js { render json: @photo.errors, status: :unprocessable_entity }
       end
     end
   end

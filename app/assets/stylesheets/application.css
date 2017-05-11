@@ -12,7 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ *= require toastr
  */
  body { padding-top: 60px; }
-footer { margin-top: 100px; }
-
+ background-image: url(/assets/background.jpg);
+ header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
