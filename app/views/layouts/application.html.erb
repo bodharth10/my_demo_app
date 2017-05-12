@@ -17,6 +17,7 @@
             <li><%= link_to "About Us", home_about_us_path %></li>
             <li><%= link_to "Gallery", photos_path %></li>
              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'navbar-link red_bttn'  %></li>
+              <li><%= link_to "Edit Account", edit_user_registration_path %></li>
                <% else %>
                 <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link blue_bttn'  %> |
                 <%= link_to "Login", new_user_session_path, :class => 'navbar-link home_bttn'  %>
@@ -44,6 +45,6 @@
               </div>
             </div>
           </footer>
-          
+
   </body>
 </html>

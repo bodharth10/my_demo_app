@@ -57,7 +57,9 @@ group :development do
   gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
   gem 'mail_form'
   gem 'simple_form'
-  gem 'toastr-rails'
+  gem 'toastr-rails'#for toast shape notification.
+  gem 'roo' #for csv import
+  gem 'awesome_print'
   #gem 'mysql2'
 end
 

@@ -7,6 +7,11 @@ class PhotosController < ApplicationController
     @photos = Photo.page(params[:page])
   end
 
+  def import
+     Photo.import(params[:file])
+       redirect_to photos_path, notice: 'Photos imported.'
+  end
+
   # GET /people/1
   # GET /people/1.json
   def show

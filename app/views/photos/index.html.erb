@@ -1,5 +1,10 @@
 <h1>Gallery</h1>
 <h2><%= link_to "Add photo", new_photo_path %></h2>
+<h2>Import Photos</h2>
+  <%= form_tag  import_photos_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
 <div id="photo_index">
   <%= render 'index', photos: @photos %>
 </div>
