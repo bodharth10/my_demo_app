@@ -1,5 +1,6 @@
 ActiveAdmin.register User do
-	permit_params :email,:encrypted_password, :reset_password_token, :reset_password_sent_at, :reset_password_sent_at, :reset_password_sent_at, :reset_password_sent_at, :reset_password_sent_at, :remember_created_at, :remember_created_at, :remember_created_at, :remember_created_at, :remember_created_at, :current_sign_in_at, :current_sign_in_at, :current_sign_in_at, :current_sign_in_at, :current_sign_in_at, :last_sign_in_at, :last_sign_in_at, :last_sign_in_at, :last_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
+	permit_params :email, :password, :password_confirmation
+	#permit_params :email,:encrypted_password, :reset_password_token, :reset_password_sent_at, :reset_password_sent_at, :reset_password_sent_at, :reset_password_sent_at, :reset_password_sent_at, :remember_created_at, :remember_created_at, :remember_created_at, :remember_created_at, :remember_created_at, :current_sign_in_at, :current_sign_in_at, :current_sign_in_at, :current_sign_in_at, :current_sign_in_at, :last_sign_in_at, :last_sign_in_at, :last_sign_in_at, :last_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -15,9 +16,17 @@ ActiveAdmin.register User do
 index do
   column :email
   column :password
-  column :password_confirmation
 
 end
+
+form do |f|
+   f.inputs do
+     f.input :email
+     f.input :password
+     f.input :password_confirmation
+   end
+   f.actions
+  end
 
 end
 

@@ -29,3 +29,11 @@
 
   <% end %>
   </div>
+
+
+<script>
+  $('.modal-header').one('submit', function() {
+    $(this).find('input[type="submit"]').attr('disabled','disabled');
+  });
+
+</script>
