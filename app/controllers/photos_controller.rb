@@ -12,12 +12,11 @@ class PhotosController < ApplicationController
        redirect_to photos_path, notice: 'Photos imported.'
   end
 
-  # GET /people/1
-  # GET /people/1.json
+  
   def show
   end
 
-  # GET /people/new
+  
   def new
     @photo = Photo.new
     respond_to do |format|
@@ -26,12 +25,11 @@ class PhotosController < ApplicationController
     end
   end
 
-  # GET /people/1/edit
+  
   def edit
   end
 
-  # POST /people
-  # POST /people.json
+ 
   def create
     @photo = Photo.new(photo_params)
     respond_to do |format|
@@ -41,8 +39,7 @@ class PhotosController < ApplicationController
     end
   end
 
-  # PATCH/PUT /people/1
-  # PATCH/PUT /people/1.json
+  
   def update
     respond_to do |format|
       if @photo.update(photo_params)
@@ -56,8 +53,7 @@ class PhotosController < ApplicationController
     end
   end
 
-  # DELETE /people/1
-  # DELETE /people/1.json
+  
   def destroy
     @photo.destroy
     respond_to do |format|
@@ -67,12 +63,12 @@ class PhotosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    
     def set_photos
       @photo = Photo.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    
     def photo_params
       params.require(:photo).permit(:title, :file)
     end

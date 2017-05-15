@@ -60,6 +60,7 @@ group :development do
   gem 'toastr-rails'#for toast shape notification.
   gem 'roo' #for csv import
   gem 'awesome_print'
+  gem 'pry-rails', '~> 0.3.4'
   #gem 'mysql2'
 end
 
