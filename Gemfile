@@ -61,6 +61,8 @@ group :development do
   gem 'roo' #for csv import
   gem 'awesome_print'
   gem 'pry-rails', '~> 0.3.4'
+  gem 'active_model_serializers', '~> 0.8.3'
+
   #gem 'mysql2'
 end
 
