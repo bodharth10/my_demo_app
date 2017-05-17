@@ -16,10 +16,12 @@ Rails.application.routes.draw do
        post :import
      end 
    end
-
-   namespace :api do
-    resources :photos, :defaults => { :format => 'json' }
-   end
+   post 'auth_user' => 'authentication#authenticate_user'
+   namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :users, :only => [:show, :create, :update, :destroy]
+    end
+   end  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
