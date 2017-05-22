@@ -6,17 +6,15 @@ class Api::V1::PhotosController < ApplicationController
 
    def index
     photos = Photo.all
-	    respond_to do |format|
-	      format.json { render json: photos }
-	    end
+	      render :json => { :status => 'success', :photo => photos.as_json() ,:message => 'record fetched successfully' ,:code => '200'}
    end
 
 		  def create
 		   photo = Photo.new(photo_params) 
 			   if photo.save 
-			     render json: photo, status: 201
+			     render :json => { :status => 'success', :photo => photo.as_json() ,:message => 'photo saved successfully' ,:code => '201'}
 			   else
-			     render json: { errors: photo.errors}, status: 422
+			     render json: { errors: photo.errors}, status: 422 , message: 'failed'
 			   end
 		  end
 
@@ -26,18 +24,16 @@ class Api::V1::PhotosController < ApplicationController
 
 		  def update
 		    photo = Photo.find(params[:id])
-
-		    if photo.update(photo_params)
-		      render json: photo, status: 200
-		    else
-		      render json: { errors: photo.errors }, status: 422
-		    end
+			    if photo.update(photo_params)
+			      render :json => { :status => 'success', :photo => photo.as_json() ,:message => 'photo updated successfully' ,:code => '201'}
+			    else
+			      render json: { errors: photo.errors }, status: 422
+			    end
 		  end
 
 		  def destroy
 		    photo = Photo.find(params[:id])
 		    photo.destroy
-		    head 204
 		  end
 
 		  private

@@ -62,7 +62,9 @@ group :development do
   gem 'awesome_print'
   gem 'pry-rails', '~> 0.3.4'
   gem 'active_model_serializers', '~> 0.8.3'
-  gem 'jwt', '~> 1.5', '>= 1.5.4'      
+  gem 'jwt', '~> 1.5', '>= 1.5.4'
+  gem 'redis' 
+  gem 'sidekiq'     
 
   #gem 'mysql2'
 end
