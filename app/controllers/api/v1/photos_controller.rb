@@ -12,28 +12,33 @@ class Api::V1::PhotosController < ApplicationController
 		  def create
 		   photo = Photo.new(photo_params) 
 			   if photo.save 
-			     render :json => { :status => 'success', :photo => photo.as_json() ,:message => 'photo saved successfully' ,:code => '201'}
+			     render :json => { :status => 'success', :photo => photo.as_json() ,:message => 'photo saved successfully' ,:code => '200'}
 			   else
 			     render json: { errors: photo.errors}, status: 422 , message: 'failed'
 			   end
 		  end
 
 		  def show
-		    respond_with Photo.find(params[:id])
+		  	 photo = Photo.find(params[:id])
+			    render :json => { :status => 'success', :photo => photo.as_json() ,:message => 'photo fetched successfully' ,:code => '200'}
 		  end
 
 		  def update
 		    photo = Photo.find(params[:id])
 			    if photo.update(photo_params)
-			      render :json => { :status => 'success', :photo => photo.as_json() ,:message => 'photo updated successfully' ,:code => '201'}
+			      render :json => { :status => 'success', :photo => photo.as_json() ,:message => 'photo updated successfully' ,:code => '200'}
 			    else
-			      render json: { errors: photo.errors }, status: 422
+			      render json: { errors: photo.errors }, status: 500
 			    end
 		  end
 
 		  def destroy
 		    photo = Photo.find(params[:id])
-		    photo.destroy
+		     if photo.destroy
+		        render :json => { :status => 'success',:message => 'photo deleted successfully' ,:code => '201'}
+		      else
+			      render json: { errors: photo.errors }, status: 500
+			    end   
 		  end
 
 		  private

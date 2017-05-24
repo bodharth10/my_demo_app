@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,:async
 
    after_create :welcome_send
    
@@ -11,7 +11,7 @@ class User < ApplicationRecord
 	   No = ('0'.. '9').to_a
 	   
    def welcome_send
-      WelcomeMailer.welcome_send(self).deliver     	
+      WelcomeMailer.welcome_send(self).deliver_later     	
    end 
 
    def random_password()

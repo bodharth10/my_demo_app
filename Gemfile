@@ -64,7 +64,9 @@ group :development do
   gem 'active_model_serializers', '~> 0.8.3'
   gem 'jwt', '~> 1.5', '>= 1.5.4'
   gem 'redis' 
-  gem 'sidekiq'     
+  gem 'sidekiq'
+  gem 'devise-async'
+  gem "bootstrap-sass-rails", "~> 2.2.2.0"    
 
   #gem 'mysql2'
 end

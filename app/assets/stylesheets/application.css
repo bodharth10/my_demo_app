@@ -15,7 +15,7 @@
  *= require toastr
  */
  body { padding-top: 60px; }
- background-image: url(/assets/background.jpg);
+ background-image: image-url("assets/background.jpg");
  html,
  body {
 	margin:0;
@@ -28,10 +28,10 @@
 }
 #header {
 	background:#ededed;
-	padding:10px;
+	padding:30px;
 }
 #content {
-	padding-bottom:100px;  Height of the footer element 
+	padding-bottom:50px;  Height of the footer element 
 }
 /*footer {
 	background:#000000;
@@ -41,3 +41,4 @@
 	bottom:0;
 	left:0;
 }*/
+
