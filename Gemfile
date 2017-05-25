@@ -66,7 +66,8 @@ group :development do
   gem 'redis' 
   gem 'sidekiq'
   gem 'devise-async'
-  gem "bootstrap-sass-rails", "~> 2.2.2.0"    
+  gem "bootstrap-sass-rails", "~> 2.2.2.0" 
+  #gem 'sidekiq_monitor'   
 
   #gem 'mysql2'
 end

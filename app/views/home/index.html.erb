@@ -1,5 +1,5 @@
 <h1>Home</h1>
-<h2> Logged in <%#= current_user.email %> </h2>
+<h2> Logged in <%= current_user.email %> </h2>
 <li><%= link_to "Edit Account", edit_user_registration_path %></li>
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
@@ -8,6 +8,7 @@
             <li><%= link_to "Contact Us",contacts_path %></li>
             <li><%= link_to "About Us", home_about_us_path %></li>
             <li><%= link_to "Gallery", photos_path %></li>
+            <li><%= link_to "Edit Account", edit_user_registration_path %></li>
             <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li> 
           </ul>
         </nav>
