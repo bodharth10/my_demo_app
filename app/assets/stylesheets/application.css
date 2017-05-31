@@ -15,7 +15,7 @@
  *= require toastr
  */
  body { padding-top: 60px; }
- background-image: image-url("assets/background.jpg");
+ background-image: image-url("background.jpg");
  html,
  body {
 	margin:0;

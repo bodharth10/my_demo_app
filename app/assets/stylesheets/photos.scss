@@ -1,3 +1,27 @@
 // Place all the styles related to the photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#photo_counter
+{
+  width: 100px;
+	height: 100px;
+	background: yellow;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+  float:right;
+  margin:5px;
+}
+.count
+{
+  line-height: 100px;
+  color:black;
+  margin-left:30px;
+  font-size:25px;
+}
+.count-text{
+    float: right;
+    margin-right: -430px;
+    margin-top: 50px;
+}

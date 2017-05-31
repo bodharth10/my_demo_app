@@ -1,8 +1,20 @@
-<h1>Gallery</h1>
-<h2><%= link_to "Add photo", new_photo_path %></h2>
-<h2> Photo Count <%= Photo.count %> </h2>
 
-<h2>Import Photos</h2>
+<div class="row">
+  <div class="col-md-5">
+    <div class="count-text">Total Photo Count</div>
+  </div>
+  <div class="col-md-5 col-md-offset-2"></div>
+  <div id="photo_counter"><span class="count"><%= Photo.count %></span></div>
+  
+</div>
+
+<h1>Gallery</h1>
+
+<div class="ajax-progress"></div>
+
+<h2><%= link_to "Add photo", new_photo_path %></h2>
+
+<h3>Import Photos</h3>
   <%= form_tag  import_photos_path, multipart: true do %>
   <%= file_field_tag :file %></br>
   <%= submit_tag "Import" %>
@@ -18,3 +30,44 @@
   </div> 
 </div>
 <%= paginate @photos %>
+
+<script>
+  $(document).ready(function() {
+
+      $(".ajax-progress").show();
+      $.ajax({
+            type: "GET",// GET in place of POST
+            url: "/",
+            success: function (result) {
+               //do somthing here
+               $(".ajax-progress").hide("");
+            },
+            error: function (response){
+               window.alert("something wrong!");
+            }
+       });
+                                                                                                                                                                                                                                                                                                                                                                         
+   });
+</script>
+
+<script>
+   $('.count').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 4000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+            console.log($(this).html());
+            if ($(this).html() < <%= Photo.count %>) {
+             $(".count-text").css("color", "orange");
+            } else {
+             $(".count-text").css("color", "green");
+            } 
+        }
+    });
+});
+</script>
+
+

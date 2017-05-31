@@ -16,6 +16,11 @@ class PhotosController < ApplicationController
   def show
   end
 
+
+  def counter
+    Photo.count
+  end
+
   
   def new
     @photo = Photo.new

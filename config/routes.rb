@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
    require 'sidekiq/web'
     mount Sidekiq::Web => '/sidekiq'
-   match '/contacts', to: 'contacts#new', via: 'get'
+    match '/contacts', to: 'contacts#new', via: 'get'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
