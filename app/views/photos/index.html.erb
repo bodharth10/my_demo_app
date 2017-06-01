@@ -1,24 +1,21 @@
 
-<div class="row">
+<div class="container">
   <div class="col-md-5">
     <div class="count-text">Total Photo Count</div>
   </div>
   <div class="col-md-5 col-md-offset-2"></div>
-  <div id="photo_counter"><span class="count"><%= Photo.count %></span></div>
-  
+  <div id="photo_counter"><span class="count"><%= Photo.count %></span></div> 
 </div>
-
-<h1>Gallery</h1>
 
 <div class="ajax-progress"></div>
 
-<h2><%= link_to "Add photo", new_photo_path %></h2>
+<h2><%= link_to "Add New photo", new_photo_path %></h2>
 
-<h3>Import Photos</h3>
+<h3>Bulk Import Photos</h3>
   <%= form_tag  import_photos_path, multipart: true do %>
   <%= file_field_tag :file %></br>
-  <%= submit_tag "Import" %>
-<% end %>
+  <%= submit_tag "Import" %></br>
+<% end %></br>
 
 <div id="photo_index">
   <%= render 'index', photos: @photos %>
@@ -65,7 +62,7 @@
             } else {
              $(".count-text").css("color", "green");
             } 
-        }
+        }  
     });
 });
 </script>

@@ -57,7 +57,7 @@ group :development do
   gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
   gem 'mail_form'
   gem 'simple_form'
-  gem 'toastr-rails'#for toast shape notification.
+  gem 'toastr_rails'
   gem 'roo' #for csv import
   gem 'awesome_print'
   gem 'pry-rails', '~> 0.3.4'
@@ -65,7 +65,7 @@ group :development do
   gem 'jwt', '~> 1.5', '>= 1.5.4'
   gem 'redis' 
   gem 'sidekiq'
-  gem 'devise-async'
+  gem 'devise-async','0.10.2'
   gem "bootstrap-sass-rails", "~> 2.2.2.0" 
   #gem 'sidekiq_monitor'   
 
