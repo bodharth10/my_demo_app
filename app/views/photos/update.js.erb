@@ -1,3 +1,10 @@
-$("#photo_index").html("<%= escape_javascript render(:partial => 'index', :locals => { photos: @photos }) %>");
-$("#myModal").modal('hide');
-$('.modal-backdrop').remove();
+<% if @photo.errors.present? %>
+	<% @photo.errors.messages.each do |k,v|%>
+	$(".err").html("<%= k %> <%=v[0]%>");
+	<% end %>
+<% else %>
+	$("#photo_index").html("<%= escape_javascript render(:partial => 'index', :locals => { photos: @photos }) %>");
+
+	$("#myModal").modal('hide');
+	$('.modal-backdrop').remove();
+<% end %>

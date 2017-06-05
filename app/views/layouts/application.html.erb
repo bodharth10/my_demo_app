@@ -4,9 +4,9 @@
     <title> Maropost - Start </title>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <header class="navbar navbar-fixed-top navbar-inverse">
@@ -30,19 +30,13 @@
       </div>
     </header>
   </head>
-      <%= render 'toastr_rails/flash'%>
  <body>
    <div class="container">
-     <%= yield %>
+     <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+     <%= yield %> 
+     <%= render 'layouts/footer' %>
    </div>
-   <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8" style="padding-top:20px;">
-           <!--  <small>Online gallery</small> -->
-          </div>
-        </div>
-      </div>
-   </footer>
  </body>
 </html>

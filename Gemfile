@@ -57,7 +57,7 @@ group :development do
   gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
   gem 'mail_form'
   gem 'simple_form'
-  gem 'toastr_rails'
+  #gem 'toastr_rails'
   gem 'roo' #for csv import
   gem 'awesome_print'
   gem 'pry-rails', '~> 0.3.4'
@@ -65,8 +65,9 @@ group :development do
   gem 'jwt', '~> 1.5', '>= 1.5.4'
   gem 'redis' 
   gem 'sidekiq'
-  gem 'devise-async','0.10.2'
+  gem 'devise-async','1.0.0beta'
   gem "bootstrap-sass-rails", "~> 2.2.2.0" 
+  gem 'client_side_validations'
   #gem 'sidekiq_monitor'   
 
   #gem 'mysql2'
@@ -75,3 +76,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
+

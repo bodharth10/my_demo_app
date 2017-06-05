@@ -8,8 +8,12 @@ class PhotosController < ApplicationController
   end
 
   def import
-     Photo.import(params[:file])
-       redirect_to photos_path, notice: 'Photos imported.'
+    begin
+      Product.import(params[:file])
+      redirect_to photos_path, notice: "Products imported."
+    rescue
+      redirect_to photos_path, notice: "Invalid CSV file format/No file choosen"
+    end
   end
 
   
@@ -37,11 +41,11 @@ class PhotosController < ApplicationController
  
   def create
     @photo = Photo.new(photo_params)
-    respond_to do |format|
       if @photo.save
-        format.html { redirect_to photos_path, notice: 'Photo was successfully created.' }
+        redirect_to photos_path, notice: 'Photo was successfully created.'
+      else
+        render :new ,notice:  'Sorry we cannot add this product.'
       end
-    end
   end
 
   
@@ -52,8 +56,7 @@ class PhotosController < ApplicationController
         format.html { redirect_to photos_path, notice: 'Photo was successfully updated.' }
         format.js 
       else
-        format.html { render :edit }
-        format.js 
+        format.js {  }
       end
     end
   end
@@ -62,7 +65,10 @@ class PhotosController < ApplicationController
   def destroy
     @photo.destroy
     respond_to do |format|
-      format.html { redirect_to photo_url, notice: 'Photo was successfully destroyed.' }
+      format.html {
+        flash[:success] = 'Photo was successfully destroyed.'
+        redirect_to photos_path
+      }
       format.json { head :no_content }
     end
   end

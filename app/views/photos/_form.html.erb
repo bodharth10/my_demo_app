@@ -1,26 +1,19 @@
 
 <div class="modal-header" id="photo-modal">
-    <%= form_for @photo,  remote: true, :html => {:multipart => true} do |form| %>
-      <% if @photo.errors.any? %>
+    <%= form_for @photo, remote: true, :html => {:multipart => true} do |form| %>
+      <%= render "shared/error_messages", :target => @photo %>
         <div id="error_explanation">
-          <h2><%= pluralize(photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
-
-          <ul>
-          <% photo.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
+          <div class="err"></div>
         </div>
-      <% end %>
 
       <div class="form-group">
         <%= form.label :title %>
-        <%= form.text_field :title, id: :photo_title , class:'form-control'%>
+        <%= form.text_field :title, id: :photo_title ,:required => true,class:'form-control' %>
       </div>
 
       <div class="form-group">
         <%= form.label :file %>
-        <%= form.file_field :file, id: :photo_file ,class:'form-control' %>
+        <%= form.file_field :file, id: :photo_file ,:required => true,class:'form-control' %>
       </div>
 
       <div class="actions">

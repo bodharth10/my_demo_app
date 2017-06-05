@@ -15,4 +15,5 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree 
-//= require toastr_rails
+//= require rails.validations
+
