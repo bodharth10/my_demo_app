@@ -4,7 +4,6 @@ class Contact < MailForm::Base
   attribute :message,   :validate => true
   attribute :mobile_number, :validate => /\d{3}-\d{3}-\d{4}/
 
-  
   def headers
     {
       :subject => "Acknowlegement mail ",

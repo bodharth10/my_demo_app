@@ -1,20 +1,4 @@
 
-   <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><%= current_user.email %></a></li>
-            <li><%= link_to "Home",root_path %></li>
-            <li><%= link_to "Contact Us",contacts_path %></li>
-            <li><%= link_to "About Us", home_about_us_path %></li>
-            <li><%= link_to "Gallery", photos_path %></li>
-            <li><%= link_to "Edit Account", edit_user_registration_path %></li>
-            <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
 <div class="example1">
  <h3> Welcome to Maropost... </h3>
 </div>
