@@ -18,7 +18,11 @@ class User < ApplicationRecord
     Nu.sort_by { rand }.join[0..1]  + Al.sort_by { rand }.join[0..6] + No.sort_by { rand }.join[0..1] 
    end
 
-   def password_required?
-    false
-   end
+  def password_required?
+    if !persisted? 
+      false
+    else
+      !password.nil? || !password_confirmation.nil?
+    end
+  end
 end

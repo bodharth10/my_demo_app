@@ -3,7 +3,7 @@ class Photo < ApplicationRecord
   require 'open-uri'
   # validate :avatar_size_validation
    mount_uploader :file, PictureUploader
-   validates :title, presence: true
+   validates :title, presence: true,uniqueness: true
    validates :file, presence: true
    paginates_per  6
 
