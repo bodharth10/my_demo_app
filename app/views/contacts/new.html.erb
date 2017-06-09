@@ -23,7 +23,7 @@
                         <div class="form-group">
                                <%= f.label :mobile_number, class: "col-md-10 col-md-offset-1" %>
                            <div class="col-md-10 col-md-offset-1">
-                               <%= f.text_field :mobile_number,placeholder: 'Enter mobile number',autofocus: true ,:required => true, class: "form-control" %>
+                               <%= f.text_field :mobile_number,placeholder: 'Enter 10 digit mobile number',autofocus: true ,:required => true,:pattern => "[789][0-9]{9}",class: "form-control" %>
                            </div>
                         </div> 
 

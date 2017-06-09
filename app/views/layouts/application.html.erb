@@ -32,11 +32,9 @@
   </head>
  <body>
    <div class="container">
-     <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
-     <%= yield %> 
-     <%= render 'layouts/footer' %>
+    <%= render 'layouts/messages' %> 
+      <%= yield %> 
+    <%= render 'layouts/footer' %>
    </div>
  </body>
 </html>

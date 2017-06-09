@@ -5,7 +5,7 @@ class Photo < ApplicationRecord
    mount_uploader :file, PictureUploader
    validates :title, presence: true,uniqueness: true
    validates :file, presence: true
-   paginates_per  6
+   # paginates_per  6
 
   def self.import(file)
    CSV.foreach(file.path, headers: true) do |row|

@@ -1,11 +1,8 @@
 class PhotosController < ApplicationController
   before_action :set_photos, only: [:show, :edit, :update, :destroy]
-
+  before_action :get_collection, only: [:index, :update]
   before_action :authenticate_user!
 
-  def index
-    @photos = Photo.page(params[:page])
-  end
 
   def import
     begin
@@ -52,7 +49,6 @@ class PhotosController < ApplicationController
   def update
     respond_to do |format|
       if @photo.update(photo_params)
-        @photos = Photo.all		
         format.html { redirect_to photos_path, notice: 'Photo was successfully updated.' }
         format.js 
       else
@@ -71,6 +67,10 @@ class PhotosController < ApplicationController
       }
       format.json { head :no_content }
     end
+  end
+
+  def get_collection
+    @photos = Photo.page(params[:page]).per(6)
   end
 
   private
