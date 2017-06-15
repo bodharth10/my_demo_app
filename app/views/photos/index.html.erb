@@ -4,7 +4,7 @@
     <div class="count-text">Total Photo Count</div>
   </div>
   <div class="col-md-5 col-md-offset-2"></div>
-  <div id="photo_counter"><span class="count"><%= Photo.count %></span></div>
+  <div id="photo_counter"><span class="count"></span></div>
   
 </div>
 
@@ -33,23 +33,24 @@
 
 <script>
   $(document).ready(function() {
-      $(".ajax-progress").show();
+    $(".count-text").css("color", "orange");
       $.ajax({
             type: "GET",// GET in place of POST
-            url: "/",
+            url: "/photos/counter",
             success: function (result) {
                //do somthing here
-               $(".ajax-progress").hide("");
+               $(".count").html(result);
+               $(".count-text").css("color", "green");
             },
             error: function (response){
-               window.alert("something wrong!");
+              window.alert("something wrong!");
             }
        });
                                                                                                                                                                                                                                                                                                                                                                          
    });
 </script>
 
-<script>
+<!-- <script>
    $('.count').each(function () {
     $(this).prop('Counter',0).animate({
         Counter: $(this).text()
@@ -59,7 +60,7 @@
         step: function (now) {
             $(this).text(Math.ceil(now));
             console.log($(this).html());
-            if ($(this).html() < <%= Photo.count %>) {
+            if ($(this).html() < <%#= Photo.count %>) {
              $(".count-text").css("color", "orange");
             } else {
              $(".count-text").css("color", "green");
@@ -68,6 +69,6 @@
     });
 });
 </script>
-
+ -->
 
 

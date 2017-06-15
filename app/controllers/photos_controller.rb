@@ -19,7 +19,10 @@ class PhotosController < ApplicationController
 
 
   def counter
-    Photo.count
+   @count = Photo.count
+    respond_to do |format|
+      format.json { render json: @count}
+    end
   end
 
   

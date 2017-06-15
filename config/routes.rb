@@ -15,6 +15,7 @@ Rails.application.routes.draw do
    resources :photos do
      collection do
        post :import
+       get  :counter
      end 
    end
    # post 'auth_user' => 'authentication#authenticate_user'
