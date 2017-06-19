@@ -1,0 +1,10 @@
+octopus:
+  replicated: true
+  environments:
+    - development
+    - production
+
+  development:
+    slave1:
+      adapter: sqlite3
+      database: db/development.sqlite3

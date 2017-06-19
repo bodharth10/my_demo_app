@@ -68,6 +68,7 @@ group :development do
   gem 'devise-async','1.0.0beta'
   gem "bootstrap-sass-rails", "~> 2.2.2.0" 
   gem 'client_side_validations'
+  gem "ar-octopus", ">= 0.9.0", git: "https://github.com/thiagopradi/octopus"
   #gem 'sidekiq_monitor'   
 
   #gem 'mysql2'

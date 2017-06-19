@@ -47,6 +47,14 @@ GIT
       sass-rails
       sprockets (< 4.1)
 
+GIT
+  remote: https://github.com/thiagopradi/octopus
+  revision: 15c15efa827b45db17e3a3de440722d32f090238
+  specs:
+    ar-octopus (0.9.0)
+      activerecord (>= 4.0.0)
+      activesupport (>= 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -309,6 +317,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.8.3)
   activeadmin!
+  ar-octopus (>= 0.9.0)!
   awesome_print
   bootstrap-sass-rails (~> 2.2.2.0)
   byebug
